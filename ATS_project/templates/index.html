@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ATS Resume Screening</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>ATS Resume Screening System</h1>
+    <p>Upload your resume and check job match score</p>
+
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+        
+        <!-- File Upload -->
+        <input type="file" name="resume" required><br><br>
+
+        <!-- Job Role Dropdown -->
+        <select name="job" required>
+            <option value="">Select Job Role</option>
+            <option value="web">Web Developer</option>
+            <option value="data">Data Analyst</option>
+            <option value="java">Java Developer</option>
+        </select><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Analyze Resume</button>
+
+    </form>
+</div>
+
+</body>
+</html>
